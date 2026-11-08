@@ -1,11 +1,10 @@
-
 class Personaje:
     def __init__(self, nombre, nivel, vida_maxima, ataque):
         self.nombre = nombre
         self.nivel = nivel
         self.vida_maxima = vida_maxima
-        self.__vida = vida_maxima
         self.ataque = ataque
+        self.vida = vida_maxima
 
     @property
     def vida(self):
@@ -25,9 +24,5 @@ class Personaje:
         objetivo.recibir_dano(self.ataque)
 
     def __str__(self):
-        return f"{self.nombre} | Nivel: {self.nivel} | Vida: {self.vida}/{self.vida_maxima}"
-
-
-
-
-
+        return (f"{self.nombre} | Nivel: {self.nivel} | "
+                f"Vida: {self.vida}/{self.vida_maxima}")
