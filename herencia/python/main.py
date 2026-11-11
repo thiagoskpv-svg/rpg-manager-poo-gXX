@@ -24,12 +24,40 @@ while guerrero.esta_vivo() and monstruo.esta_vivo():
 
 print("\n=== FIN DEL COMBATE ===")
 
-if guerrero.esta_vivo():
-    print("Ganador: Guerrero")
-else:
-    print("Ganador: Monstruo")
+from guerrero import Guerrero
 
-assert guerrero.vida >= 0
-assert monstruo.vida >= 0
+thor = Guerrero("Thor", 1, 100, 15, 30, 40)
 
-print("Prueba superada: la vida nunca es negativa.")
+print("\n=== PRUEBA DE HERENCIA PYTHON ===")
+print(thor)
+print("¿Thor está vivo?", thor.esta_vivo())
+
+
+from mago import Mago
+
+mago = Mago("Merlin", 4, 80, 20, 100)
+
+print("\n=== PRUEBA DE HERENCIA: MAGO ===")
+print(mago)
+mago.mostrar_mana()
+
+
+from guerrero import Guerrero
+from mago import Mago
+from arquero import Arquero
+
+print("\n=== RETO 2: HERENCIA ===")
+
+thor = Guerrero("Thor", 5, 100, 25, 30, 40)
+merlin = Mago("Merlin", 4, 80, 20, 100)
+legolas = Arquero("Legolas", 3, 90, 18, 30, 95)
+
+print(thor)
+print(merlin)
+print(legolas)
+
+assert thor.esta_vivo()
+assert merlin.esta_vivo()
+assert legolas.esta_vivo()
+
+print("Pruebas de herencia superadas.")
