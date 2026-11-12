@@ -82,3 +82,29 @@ assert arquero_prueba.flechas == 1
 assert objetivo.vida == 62
 
 print("Pruebas de consumo de recursos superadas.")
+
+
+print("\n=== RETO 4: SOBRECARGA EN PYTHON ===")
+
+mago_sobrecarga = Mago("Merlin", 4, 80, 20, 30)
+objetivo_sobrecarga = Personaje("Objetivo", 1, 100, 5)
+
+mago_sobrecarga.atacar(objetivo_sobrecarga)
+
+assert mago_sobrecarga.mana == 20
+assert objetivo_sobrecarga.vida == 80
+
+mago_sobrecarga.atacar(objetivo_sobrecarga, "Bola de fuego")
+
+assert mago_sobrecarga.mana == 0
+assert objetivo_sobrecarga.vida == 50
+
+# Comprobar ataque sin mana
+mago_sobrecarga.atacar(objetivo_sobrecarga)
+
+assert mago_sobrecarga.mana == 0
+assert objetivo_sobrecarga.vida == 50
+
+print(mago_sobrecarga)
+print(objetivo_sobrecarga)
+print("Pruebas del Reto 4 superadas.")
