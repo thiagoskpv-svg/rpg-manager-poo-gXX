@@ -14,3 +14,10 @@ class Arquero(Personaje):
         return (super().__str__()
                 + f" | Flechas: {self.flechas}"
                 + f" | Precision: {self.precision}")
+
+    def atacar(self, objetivo):
+        if self.flechas > 0:
+            self.flechas -= 1
+            super().atacar(objetivo)
+        else:
+            print(f"{self.nombre} no tiene flechas")

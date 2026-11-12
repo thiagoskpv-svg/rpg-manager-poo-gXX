@@ -61,3 +61,24 @@ assert merlin.esta_vivo()
 assert legolas.esta_vivo()
 
 print("Pruebas de herencia superadas.")
+
+
+print("\n=== RETO 3: MAGO Y ARQUERO ===")
+
+objetivo = Personaje("Objetivo", 1, 100, 5)
+
+mago_prueba = Mago("Merlin", 4, 80, 20, 20)
+arquero_prueba = Arquero("Legolas", 3, 90, 18, 2, 95)
+
+mago_prueba.atacar(objetivo)
+arquero_prueba.atacar(objetivo)
+
+print(mago_prueba)
+print(arquero_prueba)
+print(objetivo)
+
+assert mago_prueba.mana == 10
+assert arquero_prueba.flechas == 1
+assert objetivo.vida == 62
+
+print("Pruebas de consumo de recursos superadas.")
